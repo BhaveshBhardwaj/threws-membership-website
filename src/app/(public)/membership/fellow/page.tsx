@@ -253,9 +253,9 @@ export default function FellowApplicationPage() {
               <h2 className={styles.sectionTitle}>Academic & Professional Details</h2>
               <div className={styles.formGrid}>
                 <Input
-                  label="Institution / Organization"
-                  placeholder="University Name"
-                  {...register('institution', { required: 'Institution is required' })}
+                  label="Primary Affiliation"
+                  placeholder="University or Organization Name"
+                  {...register('institution', { required: 'Primary affiliation is required' })}
                   error={errors.institution?.message}
                   required
                 />
@@ -364,10 +364,10 @@ export default function FellowApplicationPage() {
 
                 <div className={styles.fullWidth}>
                   <Textarea
-                    label="Professional References"
-                    placeholder="Name, Designation, Email, Organization (Minimum 2)"
+                    label="Nominator Name and Email"
+                    placeholder="Must be an existing Fellow or Senior Member (Name, Email, Designation)"
                     rows={3}
-                    {...register('referenceNames', { required: 'References are required for this tier' })}
+                    {...register('referenceNames', { required: 'Nominator information is required for Fellows' })}
                     error={errors.referenceNames?.message}
                     required
                   />
@@ -381,12 +381,12 @@ export default function FellowApplicationPage() {
               <div className={styles.formGrid}>
                 <div className={styles.fullWidth}>
                    <Textarea
-                    label={`Why do you want to join as a ${tierObj.name}?`}
-                    placeholder="Describe your motivation..."
+                    label="Outstanding Scholarly or Industry Contributions"
+                    placeholder="Detail the significant impacts and contributions that qualify you for this fellowship..."
                     rows={5}
                     {...register('motivation', {
-                      required: 'Motivation statement is required',
-                      minLength: { value: 20, message: 'Motivation must be at least 20 characters' },
+                      required: 'Details of contributions are required',
+                      minLength: { value: 50, message: 'Details must be at least 50 characters' },
                     })}
                     error={errors.motivation?.message}
                     required

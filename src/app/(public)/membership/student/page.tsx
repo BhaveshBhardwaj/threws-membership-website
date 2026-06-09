@@ -182,12 +182,12 @@ export default function StudentApplicationPage() {
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>Academic Information</h2>
               <div className={styles.formGrid}>
-                <Input label="Institution" placeholder="University or organization" {...register('institution', { required: 'Institution is required' })} error={errors.institution?.message} required />
+                <Input label="University / College" placeholder="University Name" {...register('institution', { required: 'Institution is required' })} error={errors.institution?.message} required />
                 <Input label="Designation" placeholder="Student, Research Assistant, etc." {...register('designation', { required: 'Designation is required' })} error={errors.designation?.message} required />
                 <Input label="Department" placeholder="Department or faculty" {...register('department', { required: 'Department is required' })} error={errors.department?.message} required />
                 <Input label="Qualifications" placeholder="Current degree or completed qualifications" {...register('qualifications', { required: 'Qualifications are required' })} error={errors.qualifications?.message} required />
                 <div className={styles.fullWidth}>
-                  <Textarea label="Experience" rows={4} placeholder="Research internships, project work, publications, or technical experience" {...register('experience', { required: 'Experience is required' })} error={errors.experience?.message} required />
+                  <Textarea label="Relevant Coursework or Project Experience" rows={4} placeholder="Research internships, academic projects, or technical experience" {...register('experience', { required: 'Experience is required' })} error={errors.experience?.message} required />
                 </div>
               </div>
             </section>
@@ -215,7 +215,7 @@ export default function StudentApplicationPage() {
               <h2 className={styles.sectionTitle}>Supporting Details</h2>
               <div className={styles.formGrid}>
                 <div className={styles.fullWidth}>
-                  <Textarea label="Motivation" rows={5} placeholder="Why do you want to join this membership track?" {...register('motivation', { required: 'Motivation is required' })} error={errors.motivation?.message} required />
+                  <Textarea label="Brief Statement of Research Interest" rows={5} placeholder="Why do you want to join this membership track? What are your research goals?" {...register('motivation', { required: 'Statement of Research Interest is required' })} error={errors.motivation?.message} required />
                 </div>
                 <Textarea label="Publications (Optional)" rows={4} placeholder="Relevant papers, presentations, or reports" {...register('publications')} error={errors.publications?.message} />
                 <Textarea label="Achievements (Optional)" rows={4} placeholder="Awards, milestones, scholarships, or notable outcomes" {...register('achievements')} error={errors.achievements?.message} />

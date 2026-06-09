@@ -364,10 +364,10 @@ export default function DistinguishedFellowApplicationPage() {
 
                 <div className={styles.fullWidth}>
                   <Textarea
-                    label="Professional References"
-                    placeholder="Name, Designation, Email, Organization (Minimum 2)"
+                    label="Invited By (Board Member / Committee Name)"
+                    placeholder="Provide the name of the board member who invited you"
                     rows={3}
-                    {...register('referenceNames', { required: 'References are required for this tier' })}
+                    {...register('referenceNames', { required: 'Inviter name is required' })}
                     error={errors.referenceNames?.message}
                     required
                   />
@@ -381,12 +381,12 @@ export default function DistinguishedFellowApplicationPage() {
               <div className={styles.formGrid}>
                 <div className={styles.fullWidth}>
                    <Textarea
-                    label={`Why do you want to join as a ${tierObj.name}?`}
-                    placeholder="Describe your motivation..."
+                    label="Acceptance Statement or Background"
+                    placeholder="A brief statement accepting this distinction and your relevant background..."
                     rows={5}
                     {...register('motivation', {
-                      required: 'Motivation statement is required',
-                      minLength: { value: 20, message: 'Motivation must be at least 20 characters' },
+                      required: 'Acceptance statement is required',
+                      minLength: { value: 10, message: 'Statement must be at least 10 characters' },
                     })}
                     error={errors.motivation?.message}
                     required

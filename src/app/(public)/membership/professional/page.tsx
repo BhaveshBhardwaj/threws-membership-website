@@ -253,9 +253,9 @@ export default function ProfessionalApplicationPage() {
               <h2 className={styles.sectionTitle}>Academic & Professional Details</h2>
               <div className={styles.formGrid}>
                 <Input
-                  label="Institution / Organization"
-                  placeholder="University Name"
-                  {...register('institution', { required: 'Institution is required' })}
+                  label="Organization / Company"
+                  placeholder="Company Name"
+                  {...register('institution', { required: 'Organization is required' })}
                   error={errors.institution?.message}
                   required
                 />
@@ -329,8 +329,8 @@ export default function ProfessionalApplicationPage() {
 
                 <div className={styles.fullWidth}>
                   <Textarea
-                    label="Experience"
-                    placeholder="Briefly describe your experience..."
+                    label="Professional Experience (min. 3 years)"
+                    placeholder="Briefly describe your relevant professional or academic experience..."
                     rows={3}
                     {...register('experience', { required: 'Experience is required' })}
                     error={errors.experience?.message}
@@ -349,7 +349,16 @@ export default function ProfessionalApplicationPage() {
                   />
                 </div>
 
-
+                <div className={styles.fullWidth}>
+                  <Textarea
+                    label="Professional References"
+                    placeholder="Names, Titles, and Contact Info of professional references"
+                    rows={3}
+                    {...register('referenceNames', { required: 'References are required' })}
+                    error={errors.referenceNames?.message}
+                    required
+                  />
+                </div>
 
               </div>
             </section>

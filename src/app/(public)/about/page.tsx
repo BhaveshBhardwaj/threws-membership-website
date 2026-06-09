@@ -70,7 +70,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.heroVisual}>
             <Image
-              src="/images/hero_research_network.png"
+              src="/images/membership_network.png"
               alt="Global research network"
               fill
               className={styles.heroImage}
@@ -87,7 +87,7 @@ export default function AboutPage() {
             <div className={styles.imageBlock}>
               <div className={styles.imageCard}>
                 <Image
-                  src="/images/about_research_institute.png"
+                  src="/images/hero-bg.png"
                   alt="Research institute collaboration"
                   fill
                   className={styles.sectionImage}

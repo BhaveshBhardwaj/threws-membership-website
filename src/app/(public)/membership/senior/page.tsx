@@ -329,8 +329,8 @@ export default function SeniorApplicationPage() {
 
                 <div className={styles.fullWidth}>
                   <Textarea
-                    label="Experience"
-                    placeholder="Briefly describe your experience..."
+                    label="Industry/Research Experience (min. 10 years)"
+                    placeholder="Briefly describe your relevant professional or academic experience..."
                     rows={3}
                     {...register('experience', { required: 'Experience is required' })}
                     error={errors.experience?.message}
@@ -362,6 +362,16 @@ export default function SeniorApplicationPage() {
                 </div>
 
 
+                <div className={styles.fullWidth}>
+                  <Textarea
+                    label="Professional References"
+                    placeholder="Names, Titles, and Contact Info for 2 to 3 professional references"
+                    rows={3}
+                    {...register('referenceNames', { required: 'References are required for Senior Members' })}
+                    error={errors.referenceNames?.message}
+                    required
+                  />
+                </div>
               </div>
             </section>
 
@@ -370,12 +380,12 @@ export default function SeniorApplicationPage() {
               <div className={styles.formGrid}>
                 <div className={styles.fullWidth}>
                    <Textarea
-                    label={`Why do you want to join as a ${tierObj.name}?`}
-                    placeholder="Describe your motivation..."
+                    label="Executive Summary of Contributions"
+                    placeholder="Summarize your outstanding contributions and why you belong in the Senior tier..."
                     rows={5}
                     {...register('motivation', {
-                      required: 'Motivation statement is required',
-                      minLength: { value: 20, message: 'Motivation must be at least 20 characters' },
+                      required: 'Executive summary is required',
+                      minLength: { value: 20, message: 'Summary must be at least 20 characters' },
                     })}
                     error={errors.motivation?.message}
                     required

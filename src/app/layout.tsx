@@ -71,8 +71,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${sourceSerif.variable}`} data-scroll-behavior="smooth">
-      <body className={jakarta.className}>
+    <html lang="en" className={`${jakarta.variable} ${sourceSerif.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
+      <body className={jakarta.className} suppressHydrationWarning>
         <NextAuthProvider>
           <ToastProvider>{children}</ToastProvider>
         </NextAuthProvider>
