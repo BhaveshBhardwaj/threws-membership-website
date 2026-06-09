@@ -1,0 +1,217 @@
+/* ========== Button Base ========== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========== Sizes ========== */
+.sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  gap: 6px;
+}
+
+.md {
+  height: 40px;
+  padding: 0 18px;
+  font-size: var(--text-sm);
+}
+
+.lg {
+  height: 48px;
+  padding: 0 24px;
+  font-size: var(--text-base);
+  border-radius: var(--radius-lg);
+  gap: 10px;
+}
+
+/* ========== Variants ========== */
+
+/* Primary */
+.primary {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(59, 34, 180, 0.25);
+}
+
+.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  box-shadow: 0 8px 20px rgba(59, 34, 180, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Secondary */
+.secondary {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary);
+  border-color: var(--color-primary-100);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-primary-100);
+  border-color: var(--color-primary-light);
+}
+
+/* Outline */
+.outline {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.outline:hover:not(:disabled) {
+  background-color: var(--color-primary-50);
+  border-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Ghost */
+.ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-color: transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+/* Danger */
+.danger {
+  background-color: var(--color-error);
+  color: #ffffff;
+  border-color: var(--color-error);
+}
+
+.danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+  border-color: #b91c1c;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* ========== Full Width ========== */
+.fullWidth {
+  width: 100%;
+}
+
+/* ========== Loading ========== */
+.loading {
+  color: transparent !important;
+  pointer-events: none;
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary.loading .spinner,
+.danger.loading .spinner {
+  color: #ffffff;
+}
+
+.secondary.loading .spinner {
+  color: var(--color-primary);
+}
+
+.outline.loading .spinner,
+.ghost.loading .spinner {
+  color: var(--color-text-secondary);
+}
+
+.spinnerIcon {
+  width: 18px;
+  height: 18px;
+  animation: buttonSpin 0.8s linear infinite;
+}
+
+.sm .spinnerIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.lg .spinnerIcon {
+  width: 22px;
+  height: 22px;
+}
+
+/* ========== Icon ========== */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sm .icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.lg .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========== Label ========== */
+.label {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ========== Keyframes ========== */
+@keyframes buttonSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

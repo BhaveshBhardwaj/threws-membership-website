@@ -6,17 +6,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:smtp": "tsx scripts/test-smtp.ts"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "bcryptjs": "^3.0.3",
+    "lucide-react": "^1.16.0",
+    "mongoose": "^9.6.2",
     "next": "16.2.6",
+    "next-auth": "^5.0.0-beta.31",
+    "nodemailer": "^7.0.13",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.76.0",
+    "server-only": "^0.0.1",
+    "slugify": "^1.6.9",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
+    "tsx": "^4.19.4",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "typescript": "^5"

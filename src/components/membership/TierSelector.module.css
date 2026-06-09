@@ -1,0 +1,131 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.35rem;
+  text-align: left;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.card:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cardSelected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-md);
+}
+
+.cardFeatured {
+  border-color: var(--color-accent);
+}
+
+.popular {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+  color: #0c1222;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+}
+
+.cardSelected .iconWrap {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.tagline {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.amount {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+}
+
+.period {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.selectedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-success);
+  margin-top: auto;
+}

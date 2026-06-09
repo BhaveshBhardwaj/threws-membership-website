@@ -1,0 +1,209 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: var(--nav-shadow);
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: var(--text-xl);
+  color: var(--nav-logo);
+  letter-spacing: -0.5px;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.desktopMenu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopMenu {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+}
+
+.navLink {
+  color: var(--nav-link);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.navLink:hover {
+  color: var(--nav-link-hover);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--nav-link-hover);
+  transition: all 0.25s ease;
+  transform: translateX(-50%);
+}
+
+.navLink:hover::after {
+  width: 80%;
+}
+
+.navLinkActive {
+  color: var(--nav-link-hover);
+}
+
+.navLinkActive::after {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.desktopActions {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopActions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.themeToggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-bg-primary) 84%, transparent);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.themeToggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-primary-100);
+  background: var(--color-bg-primary);
+}
+
+.mobileToggle {
+  color: var(--nav-link);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .mobileToggle {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: var(--mobile-menu-bg);
+  border-bottom: 1px solid var(--nav-border);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--nav-shadow);
+  animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.logoImage {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.logo:hover .logoImage {
+  transform: scale(1.06);
+  box-shadow: 0 2px 12px rgba(30, 58, 95, 0.12);
+}
+
+.actionButton {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.adminButton {
+  border-color: rgba(180, 134, 42, 0.28) !important;
+  color: var(--color-accent-dark) !important;
+}

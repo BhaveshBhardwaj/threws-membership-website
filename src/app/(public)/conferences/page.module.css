@@ -1,0 +1,105 @@
+/* ============================================
+   Conferences Page — Premium Styles
+   ============================================ */
+
+.hero {
+  position: relative;
+  padding: 8rem 0 5rem;
+  text-align: center;
+  overflow: hidden;
+  background: var(--hero-bg);
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glow1 {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: var(--hero-glow-1);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.glow2 {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: var(--hero-glow-2);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.title {
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  margin-bottom: 1.25rem;
+  background: var(--hero-title-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--hero-subtitle-color);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: var(--leading-relaxed);
+}
+
+.section {
+  padding: var(--space-16) 0;
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.glassCard {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--glass-shadow);
+  padding: 2rem;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.glassCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 0 3rem;
+  }
+
+  .title {
+    font-size: var(--text-3xl);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

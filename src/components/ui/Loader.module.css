@@ -1,0 +1,126 @@
+/* ========== Base ========== */
+.loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+/* ========== Sizes ========== */
+.sm {
+  --loader-size: 20px;
+  --dot-size: 6px;
+  gap: 4px;
+}
+
+.md {
+  --loader-size: 32px;
+  --dot-size: 8px;
+  gap: 6px;
+}
+
+.lg {
+  --loader-size: 48px;
+  --dot-size: 10px;
+  gap: 8px;
+}
+
+/* ========== Spinner ========== */
+.spinnerSvg {
+  width: var(--loader-size);
+  height: var(--loader-size);
+  animation: loaderSpin 0.8s linear infinite;
+}
+
+.spinnerTrack {
+  opacity: 0.15;
+}
+
+.spinnerArc {
+  opacity: 1;
+}
+
+@keyframes loaderSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========== Dots ========== */
+.dot {
+  display: block;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: dotBounce 1.2s infinite ease-in-out;
+}
+
+.dotDelay1 {
+  animation-delay: 0.16s;
+}
+
+.dotDelay2 {
+  animation-delay: 0.32s;
+}
+
+@keyframes dotBounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.3);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ========== Pulse ========== */
+.pulseRing {
+  position: absolute;
+  width: var(--loader-size);
+  height: var(--loader-size);
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: pulseExpand 1.4s ease-out infinite;
+}
+
+.pulseDot {
+  width: calc(var(--loader-size) * 0.35);
+  height: calc(var(--loader-size) * 0.35);
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: pulseBeat 1.4s ease-in-out infinite;
+}
+
+.loader:has(.pulseRing) {
+  position: relative;
+}
+
+@keyframes pulseExpand {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseBeat {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+}
